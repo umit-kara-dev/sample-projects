@@ -1,0 +1,105 @@
+{
+	"info": {
+		"_postman_id": "b1b77ef5-4eb0-4f53-93e7-985b3d9f7fa2",
+		"name": "RIG",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CreateOrder",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "pass1",
+						"username": "1@x.com"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"transactionId\": \"4\",\r\n  \"channel\": \"web\",\r\n  \"itemList\": [\r\n    {\r\n      \"isbn\": \"ISBN 978-0-596-52068-7\",\r\n      \"orderCount\": 1\r\n    },\r\n    {\r\n      \"isbn\": \"ISBN 978-0-596-52068-6\",\r\n      \"orderCount\": 1\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8070/order/createOrder"
+			},
+			"response": []
+		},
+		{
+			"name": "ListOrder",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "pass1",
+						"username": "1@x.com"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"transactionId\": \"4\",\r\n  \"channel\": \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8070/order/listOrders"
+			},
+			"response": []
+		},
+		{
+			"name": "CreateCustomer",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"transactionId\": \"123\",\r\n  \"channel\": \"web\",\r\n  \"name\": \"umit\",\r\n  \"surname\": \"kara\",\r\n  \"address\": \"istanbul\",\r\n  \"email\": \"x@x.com\",\r\n  \"password\": \"1Ab!7s_3y\"  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8070/customer/createCustomer"
+			},
+			"response": []
+		},
+		{
+			"name": "ViewOrderDetails",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "pass1",
+						"username": "1@x.com"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"transactionId\": \"4\",\r\n  \"channel\":\"test\",\r\n  \"orderId\": \"350764615167528121\"\r\n  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8070/order/viewOrderDetails"
+			},
+			"response": []
+		}
+	]
+}
